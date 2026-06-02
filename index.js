@@ -729,7 +729,7 @@ if (container) {
                 <a href="${project.link}"
                     data-brochure="${project.link}"
                     data-project="${project.name}"
-                    class="brochure-link flex-1 py-2 md:py-7 text-sm md:text-base rounded-xl border border-[#d4af37]/40 bg-yellow-200 text-center text-[#1f2937] hover:bg-[#d4af37] hover:text-black hover:border-[#d4af37] transition-all duration-300">
+                    class="brochure-link flex-1 py-2 md:py-7 text-sm md:text-base rounded-xl border border-[#d4af37]/40 bg-yellow-100 text-center text-[#1f2937] hover:bg-[#d4af37] hover:text-black hover:border-[#d4af37] transition-all duration-300">
 
                     Download Brochure
 
