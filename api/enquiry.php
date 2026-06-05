@@ -356,14 +356,12 @@ function sendCrmLead($url, $apiKey, $payload) {
 $crmApiUrl = "https://connect.leadrat.com/api/v1/integration/Website";
 $crmApiKey = "YWIxZGVhODQtNjRjNy00ZmRmLWFhZjctNjUzYzYxYTdlNjk1";
 $crmResult = sendCrmLead($crmApiUrl, $crmApiKey, $crmPayload);
-file_put_contents(
-    __DIR__ . "/crm_response.txt",
-    json_encode([
-        "payload" => $crmPayload,
-        "response" => $crmResult
-    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL,
-    FILE_APPEND | LOCK_EX
-);
+
+// Disabled disk logging for upload-ready deployment.
+// file_put_contents(__DIR__ . "/crm_response.txt", json_encode([
+//     "payload" => $crmPayload,
+//     "response" => $crmResult
+// ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL, FILE_APPEND | LOCK_EX);
 
 if (!$crmResult["success"]) {
     $lead["crm_error"] = $crmResult["error"] ?: $crmResult["response"];
@@ -372,28 +370,18 @@ if (!$crmResult["success"]) {
     $lead["crm_response"] = $crmResult["response"];
 }
 
-$line = json_encode(
-    $lead,
-    JSON_UNESCAPED_UNICODE
-) . PHP_EOL;
+// Disabled disk logging for upload-ready deployment.
+// $line = json_encode($lead, JSON_UNESCAPED_UNICODE) . PHP_EOL;
+// $res = file_put_contents(__DIR__ . "/leads.txt", $line, FILE_APPEND | LOCK_EX);
 
-$res = file_put_contents(
-    __DIR__ . "/leads.txt",
-    $line,
-    FILE_APPEND | LOCK_EX
-);
-
-if ($res === false) {
-
-    http_response_code(500);
-
-    echo json_encode([
-        "success" => false,
-        "error" => "Failed to save lead"
-    ]);
-
-    exit;
-}
+// if ($res === false) {
+//     http_response_code(500);
+//     echo json_encode([
+//         "success" => false,
+//         "error" => "Failed to save lead"
+//     ]);
+//     exit;
+//}
 
 /*
 |--------------------------------------------------------------------------

@@ -468,6 +468,10 @@ function initEnquiryForm(formId, selectProjId, selectFlatId, pricingBoxId, price
                 `Thank you, ${name}! Your enquiry for ${project} (${flat}) has been received.`
             );
 
+            setTimeout(() => {
+                window.location.href = "/thankyou.html";
+            }, 1400);
+
             const submissionCount = incrementEnquirySubmissionCount();
             if (submissionCount >= ENQUIRY_SUBMISSION_LIMIT) {
                 disableEnquiryForms();
