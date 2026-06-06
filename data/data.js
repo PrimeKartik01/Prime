@@ -2,21 +2,21 @@
 export const slides = [
     {
         image: "images/header-slider/pride-world-city-01.webp",
-        subtitle:"Pride World City Pune",
+        subtitle: "Pride World City Pune",
         title: "Welcome to Pride World City",
         description:
             " Welcome to Pride World City – Where Life Comes Together"
     },
     {
         image: "images/header-slider/pride-world-city-02.webp",
-        subtitle:"Luxury Apartments in Pune",
+        subtitle: "Luxury Apartments in Pune",
         title: "Modern Apartments",
         description:
             "Your Dream Home in Pune's Most Integrated Township"
     },
     {
         image: "images/header-slider/pride-world-city-03.webp",
-        subtitle:"Township Projects in Pune",
+        subtitle: "Township Projects in Pune",
         title: "Premium Residences",
         description:
             "Premium Residences in a Thriving Urban Community"
@@ -26,20 +26,20 @@ export const slides = [
 // projects.js
 export const projects = [
     {
-        name: "Miami",
+        name: "Pride World City Miami",
         subtitle: "Ultra Luxury Lifestyle",
         description:
             "Premium hill-facing apartments designed with elegance and modern comfort.",
 
         stats: [
-            { label: "Acres",      value: "10" },
-            { label: "Towers",     value: "9"  },
-            { label: "Floors",     value: "23" },
+            { label: "Acres", value: "10" },
+            { label: "Towers", value: "9" },
+            { label: "Floors", value: "23" },
             { label: "Apartments", value: "1200" }
         ],
 
         features: [
-            "2BHK, 3BHK & 4.5BHK Apartments",
+            "2 BHK, 3 BHK & 4.5 BHK Apartments",
             "Hill-facing Apartments",
             "Smart Home Automation",
             "Wooden Flooring in Master Bedroom",
@@ -57,37 +57,37 @@ export const projects = [
 
         tags: [
             "Smart Home",
-            "40+ Amenities"
+            "45+ Amenities"
         ],
 
-        qr:[
+        qr: [
             { img: "images/miami/miami-qr-01.webp", number: "P52100077670" },
             { img: "images/miami/miami-qr-02.webp", number: "PR1260002502081" }
         ],
-        
+
         link: "brochure/miami.pdf",
     },
 
     {
-        name: "Montreal",
+        name: "Pride World City Montreal",
         subtitle: "Exclusive Duplex Living",
         description:
             "Exclusive duplex residences with premium specifications and double-height living.",
 
         stats: [
-            { label: "Acres",      value: "10" },
-            { label: "Towers",     value: "8"  },
-            { label: "Floors",     value: "28" },
+            { label: "Acres", value: "10" },
+            { label: "Towers", value: "8" },
+            { label: "Floors", value: "28" },
             { label: "Apartments", value: "900" }
         ],
 
         features: [
-            "2BHK, 3BHK & 4BHK Duplex Apartments",
+            "Launching Final Montreal 2 Towers",
+            "2 BHK, 3 BHK & 4BHK Duplex Apartments",
             "True Two-Floor Duplex Homes",
             "Double-height Living Area",
             "45+ Premium Amenities",
             "Smart Home Automation",
-            "Superior Specifications"
         ],
 
         images: [
@@ -97,15 +97,17 @@ export const projects = [
             "images/montreal/montreal-04.webp",
         ],
 
-        qr:[
-          {  img: "images/montreal/montreal-qr-01.webp",
-             number:"P52100053279",
-          },
-          { img:"images/montreal/montreal-qr-02.webp", 
-            number:"P52100077138"
-          }
+        qr: [
+            {
+                img: "images/montreal/montreal-qr-01.webp",
+                number: "P52100053279",
+            },
+            {
+                img: "images/montreal/montreal-qr-02.webp",
+                number: "P52100077138"
+            }
         ],
-        
+
         tags: [
             "Duplex Homes",
             "Premium Design"
@@ -115,21 +117,21 @@ export const projects = [
     },
 
     {
-        name: "Boston",
+        name: "Pride World City Boston",
         subtitle: "Premium 2 BHK Residences",
         description:
             "Spacious residences crafted for modern urban lifestyles and skyline views.",
 
         stats: [
-            { label: "Acres",      value: "8.5" },
-            { label: "Towers",     value: "10"  },
-            { label: "Floors",     value: "23"  },
+            { label: "Acres", value: "8.5" },
+            { label: "Towers", value: "10" },
+            { label: "Floors", value: "23" },
             { label: "Apartments", value: "1800" }
         ],
 
         features: [
             "Two Podiums with Panoramic Views",
-            "2BHK (S) and 2BHK (L) Apartments",
+            "2 BHK Apartments",
             "100% Covered Multilevel Parking",
             "L-Shaped Living-Dining",
             "Open Dry Balcony"
@@ -143,7 +145,7 @@ export const projects = [
 
         ],
 
-        qr:[
+        qr: [
             { img: "images/boston/boston-qr-01.webp", number: "P52100049648" },
             { img: "images/boston/boston-qr-02.webp", number: "P52100078307" }
         ],

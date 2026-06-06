@@ -600,7 +600,7 @@ if (container) {
 
         container.innerHTML += `
 
-    <div id="${project.name.toLowerCase()}" class="scroll-mt-24 md:h-[35rem] bg-white/70 backdrop-blur-xl flex flex-col md:flex-row rounded-[1.5rem] overflow-hidden border border-white/40 shadow-lg hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-500 group">
+    <div id="${project.name.toLowerCase()}" class="scroll-mt-24 md:h-[35rem] bg-white/70 backdrop-blur-xl flex flex-col md:flex-row rounded-[1.5rem] overflow-hidden border border-white/40 shadow-lg hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-500 group mb-10">
 
         <!-- Carousel -->
         <div class="relative overflow-hidden w-full md:w-1/2 h-72 md:h-full">
@@ -667,7 +667,7 @@ if (container) {
         <!-- Content -->
         <div class="p-3 md:p-7 flex flex-col justify-between w-full md:w-1/2">
 
-            <h2 class="text-5xl font-semibold mb-2">
+            <h2 class="text-4xl font-semibold mb-2">
                 ${project.name}
             </h2>
 
@@ -924,18 +924,18 @@ const LOCATION_DATA = {
 
     locations: [
 
-        { name: "Airport", lat: 18.5822, lng: 73.9197 },
+        { name: "Pune Airport", lat: 18.5822, lng: 73.9197 },
+        { name: "EON IT Park", lat: 18.5603, lng: 73.9397 },
         { name: "Kalyani Nagar", lat: 18.5484, lng: 73.9007 },
         { name: "Koregaon Park", lat: 18.5362, lng: 73.8930 },
-        { name: "Kharadi", lat: 18.5519, lng: 73.9506 },
+        { name: "Hinjewadi IT Park", lat: 18.5910, lng: 73.7389 },
+        { name: "Nashik Phata", lat: 18.6094, lng:  73.8201 },
         { name: "Wagholi", lat: 18.5793, lng: 73.9781 },
-        { name: "EON IT Park", lat: 18.5603, lng: 73.9397 },
         { name: "Yerwada", lat: 18.5514, lng: 73.8786 },
         { name: "Bhosari MIDC", lat: 18.6298, lng: 73.8403 },
         { name: "Moshi", lat: 18.6794, lng: 73.8582 },
         { name: "Alandi", lat: 18.6775, lng: 73.8987 },
         { name: "Chakan", lat: 18.7606, lng: 73.8636 },
-        { name: "Hinjewadi", lat: 18.5910, lng: 73.7389 }
 
     ]
 
