@@ -507,8 +507,15 @@ function initEnquiryForm(formId, selectProjId, selectFlatId, pricingBoxId, price
 
     return {
         setProject: (project) => {
-            projSelect.value = project;
-            populateFlats(project);
+            let mappedProj = project;
+            if (project) {
+                const p = project.toLowerCase();
+                if (p.includes("miami")) mappedProj = "Miami";
+                else if (p.includes("montreal")) mappedProj = "Montreal";
+                else if (p.includes("boston")) mappedProj = "Boston";
+            }
+            projSelect.value = mappedProj;
+            populateFlats(mappedProj);
         }
     };
 }
