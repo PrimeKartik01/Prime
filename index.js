@@ -119,35 +119,20 @@ if (slider) {
             <!-- Background Image -->
             <img 
                 src="${slide.image}" 
-                class="w-full h-full object-fill"
+                class="w-full h-full hidden lg:block object-fill"
+                alt=""
+            >
+
+            <img 
+                src="${slide.image2}" 
+                class="w-full h-full  lg:hidden object-fill"
                 alt=""
             >
 
             <!-- Soft Dark Overlay -->
-            <div class="absolute inset-0 bg-black/55"></div>
+            <div class="absolute inset-0"></div>
 
-            <!-- Content -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white z-10  text-center">
-
-                <p class="uppercase tracking-[0.3rem] font-semibold text-xs md:text-2xl mb-3 opacity-80">
-                     ${slide.subtitle}
-                </p>
-
-                <h1 class="text-5xl md:text-8xl leading-tight font-semibold mb-4 animate-content">
-                    ${slide.title}
-                </h1>
-
-                <p class="text-sm md:text-lg leading-7 opacity-90 font-light animate-content">
-                    ${slide.description}
-                </p>
-
-                <div class="mt-6">
-                    <a class=" px-6 py-3 rounded-full bg-white/90 text-black text-sm md:text-base font-medium hover:bg-white transition-all duration-300" href="#projects-container">
-                        Explore Properties
-                    </a>
-                </div>
-
-            </div>
+          
 
         </div>
 
@@ -415,6 +400,7 @@ function initEnquiryForm(formId, selectProjId, selectFlatId, pricingBoxId, price
         const numberInput = form.querySelector('input[placeholder*="number"]');
         const emailInput = form.querySelector('input[placeholder*="email"]');
         const cityInput = form.querySelector('input[placeholder*="city"]');
+        const turnstileInput = form.querySelector('[name="cf-turnstile-response"]');
 
         const name = nameInput ? nameInput.value.trim() : "";
         const number = numberInput ? numberInput.value.trim() : "";
@@ -423,7 +409,7 @@ function initEnquiryForm(formId, selectProjId, selectFlatId, pricingBoxId, price
         const project = projSelect.value;
         const flatIndex = flatSel.value;
 
-        if (!name || !number || !email || !city || !project || flatIndex === "") {
+        if (!name || !number || !email || !city || !project || flatIndex === "" || !turnstileInput?.value) {
             showToast("Please fill in all the details correctly.", "error");
             return;
         }
@@ -452,7 +438,8 @@ function initEnquiryForm(formId, selectProjId, selectFlatId, pricingBoxId, price
                     project,
                     flat,
                     price,
-                    availability
+                    availability,
+                    turnstileToken: turnstileInput.value
                 })
             });
 
@@ -513,6 +500,7 @@ function initEnquiryForm(formId, selectProjId, selectFlatId, pricingBoxId, price
                 if (p.includes("miami")) mappedProj = "Miami";
                 else if (p.includes("montreal")) mappedProj = "Montreal";
                 else if (p.includes("boston")) mappedProj = "Boston";
+                else if (p.includes("wellington")) mappedProj = "Wellington";
             }
             projSelect.value = mappedProj;
             populateFlats(mappedProj);
@@ -607,10 +595,10 @@ if (container) {
 
         container.innerHTML += `
 
-    <div id="${project.name.toLowerCase()}" class="scroll-mt-24 md:h-[35rem] bg-white/70 backdrop-blur-xl flex flex-col md:flex-row rounded-[1.5rem] overflow-hidden border border-white/40 shadow-lg hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-500 group mb-10">
+    <div id="${project.name.split(' ').pop().toLowerCase()}" class="scroll-mt-24  bg-white/70 backdrop-blur-xl flex flex-col lg:flex-row rounded-[1.5rem] overflow-hidden border border-white/40 shadow-lg hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-500 group mb-10">
 
         <!-- Carousel -->
-        <div class="relative overflow-hidden w-full md:w-1/2 h-72 md:h-full">
+        <div class="relative overflow-hidden w-full lg:w-1/2">
 
             <!-- Slider -->
             <div id="slider-${index}"
@@ -672,11 +660,12 @@ if (container) {
         </div>
 
         <!-- Content -->
-        <div class="p-3 md:p-7 flex flex-col justify-between w-full md:w-1/2">
+        <div class="p-3 md:p-7 flex flex-col justify-between w-full lg:w-1/2 h-full">
 
-            <h2 class="text-4xl font-semibold mb-2">
-                ${project.name}
-            </h2>
+            <div class="flex gap-1 flex-col flex-start mb-4">
+                <img src="${project.logo}" alt="${project.name} logo" class="w-40 h-20 md:w-64 md:h-35 object-cover"/>
+              
+            </div>
 
             <!-- Tags -->
             <div class="flex flex-wrap gap-2 mb-5">
@@ -727,7 +716,7 @@ if (container) {
             </div>
 
             <!-- Buttons -->
-            <div class="flex gap-2 md:gap-4 max-sm:mt-2">
+            <div class="flex gap-2 md:gap-4 max-sm:mt-2 md:mt-10">
 
                 <button
                     data-project="${project.name}"
@@ -771,6 +760,7 @@ dynamicEnquireButtons.forEach((btn) => {
             if (path.includes("miami")) project = "Miami";
             else if (path.includes("montreal")) project = "Montreal";
             else if (path.includes("boston")) project = "Boston";
+            else if (path.includes("wellington")) project = "Wellington";
         }
 
         enquiryModal.classList.remove("hidden");

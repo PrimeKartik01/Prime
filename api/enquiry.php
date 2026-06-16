@@ -159,6 +159,70 @@ if (!is_array($data) || empty($data)) {
 
 /*
 |--------------------------------------------------------------------------
+| Cloudflare Turnstile Verification
+|--------------------------------------------------------------------------
+*/
+
+$turnstileToken = $data['turnstileToken'] ?? '';
+
+if (empty($turnstileToken)) {
+
+    http_response_code(400);
+
+    echo json_encode([
+        "success" => false,
+        "error" => "Captcha verification required"
+    ]);
+
+    exit;
+}
+
+
+$turnstileSecret = "0x4AAAAAADlBfGkm-n_VuoXpKJua3fAw5KM";
+
+
+$verifyResponse = file_get_contents(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    false,
+    stream_context_create([
+        "http" => [
+            "method" => "POST",
+            "header" => "Content-Type: application/x-www-form-urlencoded",
+            "content" => http_build_query([
+                "secret" => $turnstileSecret,
+                "response" => $turnstileToken,
+                "remoteip" => $ip
+            ])
+        ]
+    ])
+);
+
+
+$turnstileResult = json_decode(
+    $verifyResponse,
+    true
+);
+
+
+
+if (
+    empty($turnstileResult['success'])
+    ||
+    $turnstileResult['success'] !== true
+) {
+
+    http_response_code(403);
+
+    echo json_encode([
+        "success" => false,
+        "error" => "Bot verification failed"
+    ]);
+
+    exit;
+}
+
+/*
+|--------------------------------------------------------------------------
 | Sanitize Inputs
 |--------------------------------------------------------------------------
 */

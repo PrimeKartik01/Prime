@@ -1,21 +1,32 @@
 // data.js
 export const slides = [
     {
-        image: "images/header-slider/pride-world-city-01.webp",
+        image: "images/header-slider/web-montreal01.webp",
+        image2: "images/header-slider/web-montreal02.webp",
         subtitle: "Pride World City Pune",
         title: "Welcome to Pride World City",
         description:
             " Welcome to Pride World City – Where Life Comes Together"
     },
     {
-        image: "images/header-slider/pride-world-city-02.webp",
+        image: "images/header-slider/web-miami01.webp",
+        image2: "images/header-slider/web-miami02.webp",
         subtitle: "Luxury Apartments in Pune",
         title: "Modern Apartments",
         description:
             "Your Dream Home in Pune's Most Integrated Township"
     },
     {
-        image: "images/header-slider/pride-world-city-03.webp",
+        image: "images/header-slider/web-boston01.webp",
+        image2: "images/header-slider/web-boston02.webp",
+        subtitle: "Township Projects in Pune",
+        title: "Premium Residences",
+        description:
+            "Premium Residences in a Thriving Urban Community"
+    },
+    {
+        image: "images/header-slider/web-wellington01.webp",
+        image2: "images/header-slider/web-wellington02.webp",
         subtitle: "Township Projects in Pune",
         title: "Premium Residences",
         description:
@@ -26,6 +37,7 @@ export const slides = [
 // projects.js
 export const projects = [
     {
+        logo: "images/project-logo/miami.webp",
         name: "Pride World City Miami",
         subtitle: "Ultra Luxury Lifestyle",
         description:
@@ -69,6 +81,7 @@ export const projects = [
     },
 
     {
+        logo: "images/project-logo/montreal.webp",
         name: "Pride World City Montreal",
         subtitle: "Exclusive Duplex Living",
         description:
@@ -117,6 +130,7 @@ export const projects = [
     },
 
     {
+        logo: "images/project-logo/boston.webp",
         name: "Pride World City Boston",
         subtitle: "Premium 2 BHK Residences",
         description:
@@ -155,6 +169,45 @@ export const projects = [
             "Skyline Views"
         ],
         link: "brochure/boston.pdf",
+    },
+    {
+        logo: "images/project-logo/wellington.webp",
+        name: "Pride World City Wellington",
+        subtitle: "Premium 2 BHK Residences",
+        description:
+            "When Elegance Meet Comfort.",
+
+        stats: [
+            { label: "Acres", value: "12" },
+            { label: "Towers", value: "14" },
+            { label: "Floors", value: "23" },
+            { label: "Apartments", value: "3000" }
+        ],
+
+        features: [
+            "Expansive 7-acre Podium with Full Amenities",
+            "110+ Premium Amenities",
+            "Smart, Spacious Layouts",
+            "Premium Finishes & Specifications",
+            "Multiple Activity Zones for All Age Groups"
+        ],
+
+        images: [
+            "images/wellington/wellington-01.webp",
+            "images/wellington/wellington-02.webp",
+            "images/wellington/wellington-02.webp",
+        ],
+
+        qr: [
+            { img: "images/wellington/wellington-rera-qr1.png", number: "P52100031008" },
+            { img: "images/wellington/wellington-rera-qr2.png", number: "P52100032380" }
+        ],
+
+        tags: [
+            "Double Balcony",
+            "Skyline Views"
+        ],
+        link: "brochure/wellington.pdf",
     }
 ];
 
@@ -205,6 +258,19 @@ export const projectFlats = {
             available: "Available"
         }
     ],
+
+    Wellington: [
+        {
+            type: "3 BHK (L)",
+            price: "₹ 1.14 Cr",
+            available: "Available"
+        },
+        {
+            type: "3 BHK (XL)",
+            price: "₹ 1.24 Cr",
+            available: "Available"
+        }
+    ]
 };
 
 // amenities data
@@ -256,5 +322,20 @@ export const amenitiesData = [
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>`
+    },
+    {
+        title: "Airport",
+        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-slate-700">
+            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5v4l-2 1.5v1l3.5-1 3.5 1v-1l-2-1.5v-4L21 16z"/>
+          </svg>`
+    },
+    {
+        title: "Map",
+        svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-slate-700">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/>
+            <line x1="9" y1="3" x2="9" y2="18"/>
+            <line x1="15" y1="6" x2="15" y2="21"/>
+          </svg>`
     }
+
 ];
