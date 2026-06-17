@@ -52,7 +52,7 @@ if (!is_dir($rateDir)) {
 $rateFile = $rateDir . "/" . md5($ip) . ".json";
 
 $window = 24 * 60 * 60; // 24 hours
-$maxRequests = 6;
+$maxRequests = 4;
 
 $now = time();
 
